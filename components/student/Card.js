@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { View, StyleSheet, FlatList } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import CardHeader from './CardHeader'
 import CardBody from './CardBody'
 
-export default function Card({ deleteStudent, student }) {
+export default function Card({ student, deleteStudent, editStudent }) {
     return (
         <View style={styles.container}>
-            <CardHeader title="Aluno" code={student.code} deleteStudent={code => deleteStudent(code)}/>
+            <CardHeader title="Aluno" student={student} deleteStudent={deleteStudent} editStudent={editStudent} />
             <CardBody student={student}></CardBody>
         </View>
     )

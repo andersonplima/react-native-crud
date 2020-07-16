@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
-export default function Welcome({ navigation }) {
+export default function Welcome({ onClick }) {
     return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -9,7 +9,7 @@ export default function Welcome({ navigation }) {
                 <Text style={styles.subtitle}>Seja bem-vindo(a)</Text>
             </View>
             <View style={styles.bottom}>
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('List') }>
+                <TouchableOpacity style={styles.button} onPress={onClick}>
                     <Text style={styles.buttonText}>ENTRAR</Text>
                 </TouchableOpacity>
             </View>

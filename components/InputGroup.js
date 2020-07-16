@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 
-export default function InputGroup({ label, placeHolder, setExternalValue }) {
-    const [value, setValue] = React.useState('')
+export default function InputGroup({ label, placeHolder, value: externalValue, setValue: setExternalValue }) {
+    const [value, setValue] = React.useState(externalValue)
     const setValueExtended = text => {
         setValue(text)
         setExternalValue(text)

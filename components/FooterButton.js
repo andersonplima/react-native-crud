@@ -2,10 +2,10 @@ import * as React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-export default function FooterButton({ iconName, onPress }) {
+export default function FooterButton({ iconName, caption, onPress }) {
     return (
         <TouchableOpacity style={styles.container} onPress={onPress}>
-            <Text style={styles.title}>Adicionar aluno</Text>
+            <Text style={styles.title}>{caption}</Text>
             <Icon style={styles.icon} name={iconName} />
         </TouchableOpacity>
     )
@@ -13,18 +13,13 @@ export default function FooterButton({ iconName, onPress }) {
 
 const styles = StyleSheet.create({
     container: {
-        borderRadius: 10,
-        borderTopRightRadius: 10,
         flexDirection: "row",
         height: 50,
         backgroundColor: '#1E88E5',
         flexWrap: "nowrap",
-        alignContent: "stretch",
+        alignContent: "center",
         alignItems: "center",
         padding: 10,
-        marginLeft: 10,
-        marginRight: 10,
-        marginBottom: 10
     },
     title: {
         flex: 1,
@@ -35,6 +30,7 @@ const styles = StyleSheet.create({
     },
     icon: {
         fontSize: 28,
-        color: 'white'
+        color: 'white',
+        marginHorizontal: 10
     }
 })

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import * as React from 'react'
 import Navigator from './components/Navigator'
 
 export default function App() {
