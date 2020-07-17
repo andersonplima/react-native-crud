@@ -6,12 +6,14 @@ export default function CardHeader({ student, deleteStudent, editStudent, title 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>{title}</Text>
-            <TouchableOpacity style={styles.button} onPress={() => editStudent(student)}>
-                <Icon style={styles.icon} name="edit" />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => deleteStudent(student.code)}>                
-                <Icon style={styles.icon} name="trash-alt" />
-            </TouchableOpacity>
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={() => editStudent(student)}>
+                    <Icon style={styles.icon} name="edit" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => deleteStudent(student.code)}>
+                    <Icon style={styles.icon} name="trash-alt" />
+                </TouchableOpacity>
+            </View>
         </View>
     )
 }
@@ -32,8 +34,12 @@ const styles = StyleSheet.create({
         flex: 1,
         color: 'white',
         fontSize: 28,
-        textAlign: "center",
-        marginLeft: 66
+        textAlign: "center"
+    },
+    buttonContainer: {
+        position: "absolute",
+        right: 5,
+        flexDirection: "row"
     },
     button: {
         paddingHorizontal: 5
