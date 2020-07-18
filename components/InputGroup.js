@@ -10,7 +10,9 @@ export default function InputGroup({ label, placeHolder, value: externalValue, s
     return (
         <View style={styles.container}>
             <Text style={styles.label}>{label}</Text>
-            <TextInput 
+            <TextInput
+                autoFocus={true}
+                focusable={true}                
                 style={styles.input} 
                 placeholder={placeHolder} 
                 value={value} 

@@ -14,7 +14,6 @@ export default function FooterButton({ iconName, caption, onPress }) {
 const styles = StyleSheet.create({
     container: {
         flexDirection: "row",
-        height: 50,
         backgroundColor: '#1E88E5',
         flexWrap: "nowrap",
         alignContent: "center",

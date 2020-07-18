@@ -1,4 +1,4 @@
-import * as React from 'react'
+﻿import * as React from 'react'
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 export default function Welcome({ onClick }) {

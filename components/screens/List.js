@@ -15,9 +15,9 @@ export default function List({ route, navigation }) {
     const [data, setData] = React.useState(students)
 
     React.useEffect(() => {
-        if (route.params?.student)        
-            changeData(route.params?.student)
-    }, [route.params?.student])
+        if (route?.params?.student)
+            changeData(route.params.student)
+    }, [route?.params?.student])
 
     const deleteStudent = (code) => {
         setData(data.filter(d => d.code != code))
@@ -25,14 +25,14 @@ export default function List({ route, navigation }) {
 
     const changeData = (student) => {
         const studentIndex = data.findIndex(s => s.code == student.code)
-        if (studentIndex == -1) 
+        if (studentIndex == -1)
             pushStudent(student)
         else
-            editStudentInplace(studentIndex, student)        
+            editStudentInplace(studentIndex, student)
     }
 
     const pushStudent = (student) => {
-        const code = data[data.length - 1].code + 1
+        const code = data.slice(-1).code + 1
         const studentToAdd = { ...student, code }
         setData([...data, studentToAdd])
     }
@@ -67,9 +67,9 @@ const styles = StyleSheet.create({
         marginTop: StatusBar.currentHeight || 0,
     },
     list: {
-        flex: 1,
+        flex: .9,
     },
     footer: {
-        height: 50,
+        flex: .1,
     }
 })
